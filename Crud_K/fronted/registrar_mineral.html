@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Mineral</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #d4e2fc !important;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        .btn img {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Energía</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Energías -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="energiasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Energías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="energiasDropdown">
+                            <li><a class="dropdown-item" href="todos_los_tipos_energia.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="buscar_tipo_energia.html">Buscar tipo de energía</a></li>
+                            <li><a class="dropdown-item" href="registro_proyecto.html">Agregar Nuevo Proyecto</a></li>
+                        </ul>
+                    </li>
+                    <!-- Proyectos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="proyectosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="proyectosDropdown">
+                            <li><a class="dropdown-item" href="proyectos.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="registro_proyecto.html">Agregar Nuevo Tipo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Minerales -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mineralesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Minerales
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="mineralesDropdown">
+                            <li><a class="dropdown-item" href="minerales.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="registrar_mineral.html">Agregar Nuevo Tipo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Investigadores -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="investigadoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Investigadores
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="investigadoresDropdown">
+                            <li><a class="dropdown-item" href="investigadores.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="registro_investigador.html">Agregar nuevo investigador</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mt-5">
+        <h1>Registrar Nuevo Mineral</h1>
+
+        <!-- Formulario -->
+        <form id="formulario-registrar-mineral" onsubmit="registrarMineral(event)">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Mineral</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Nombre del mineral" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea id="descripcion" class="form-control" rows="3" placeholder="Descripción del mineral" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="ubicacion" class="form-label">Ubicación</label>
+                <input type="text" id="ubicacion" class="form-control" placeholder="Ubicación del mineral" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_proyecto" class="form-label">Proyecto Asociado</label>
+                <select id="id_proyecto" class="form-select" required>
+                    <option value="">Seleccionar Proyecto</option>
+                    <!-- Opciones dinámicas -->
+                </select>
+            </div>
+            <!-- Botones -->
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success" aria-label="Registrar Mineral">
+                    <img src="img/usuario.png" alt="Registrar" width="20" height="20"> Registrar Mineral
+                </button>
+                <a href="minerales.html" class="btn btn-secondary" aria-label="Volver a la lista">
+                    <img src="img/atras.png" alt="Volver" width="20" height="20"> Volver
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script -->
+    <script src="Js/registrar_mineral.js"></script>
+</body>
+</html>
+

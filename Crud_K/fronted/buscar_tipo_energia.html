@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Tipos de Energía</title>
+    <!-- Incluir el CSS de Bootstrap 5 desde un CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #d4e2fc !important;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #003f8a;
+        }
+        table {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Energía</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Dropdown Energías -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="energiasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Energías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="energiasDropdown">
+                            <li><a class="dropdown-item" href="todos_los_tipos_energia.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="buscar_tipo_energia.html">Buscar tipo de energía</a></li>
+                            <li><a class="dropdown-item" href="registro_proyecto.html">Agregar Nuevo Proyecto</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown Proyectos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="proyectosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="proyectosDropdown">
+                            <li><a class="dropdown-item" href="proyectos.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="registro_proyecto.html">Agregar Nuevo Tipo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown Minerales -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="mineralesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Minerales
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="mineralesDropdown">
+                            <li><a class="dropdown-item" href="minerales.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="registrar_mineral.html">Agregar Nuevo Tipo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown Investigadores -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="investigadoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Investigadores
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="investigadoresDropdown">
+                            <li><a class="dropdown-item" href="investigadores.html">Consulta general</a></li>
+                            <li><a class="dropdown-item" href="registro_investigador.html">Agregar nuevo investigador</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Buscar Tipos de Energía</h1>
+
+        <!-- Buscar Tipos de Energía por Renovabilidad -->
+        <div class="mb-4">
+            <h2>Buscar Tipos de Energía por Renovabilidad</h2>
+            <div class="form-group mb-3">
+                <label for="tipo-renovabilidad" class="form-label">Seleccione una opción:</label>
+                <select id="tipo-renovabilidad" class="form-select">
+                    <option value="">Seleccione una opción</option>
+                    <option value="Renovable">Renovable</option>
+                    <option value="No Renovable">No Renovable</option>
+                </select>
+            </div>
+            <button id="buscar-tipo-btn" class="btn btn-primary">Buscar</button>
+        </div>
+
+        <!-- Resultados de la Búsqueda -->
+        <h2>Resultados de la Búsqueda</h2>
+        <table id="resultados-busqueda" class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Datos dinámicos -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script para manejar la lógica de búsqueda -->
+    <script src="Js/buscar_tipo.js"></script>
+</body>
+</html>
+
